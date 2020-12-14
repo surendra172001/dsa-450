@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 int findPivot(int arr[], int l, int r)
 {
     int arrSize = r - l + 1;
