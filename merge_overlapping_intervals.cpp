@@ -22,6 +22,38 @@ public:
 
         sort(intervals.begin(), intervals.end(), cmp);
 
+        vector<vector<int>> ans;
+
+        int initialSize = intervals.size();
+        int leftEndValue = intervals[0][0];
+        int rightEndValue = intervals[0][1];
+
+        for (int i = 1; i < intervals.size(); i++)
+        {
+
+            if (rightEndValue >= intervals[i][0])
+            {
+                leftEndValue = min(leftEndValue, intervals[i][0]);
+                rightEndValue = max(rightEndValue, intervals[i][1]);
+            }
+            else
+            {
+                ans.push_back(vector<int>({leftEndValue, rightEndValue}));
+                leftEndValue = intervals[i][0];
+                rightEndValue = intervals[i][1];
+            }
+        }
+
+        ans.push_back(vector<int>({leftEndValue, rightEndValue}));
+
+        return ans;
+    }
+
+    vector<vector<int>> mergeOld(vector<vector<int>> &intervals)
+    {
+
+        sort(intervals.begin(), intervals.end(), cmp);
+
         int s = 0, r = 1;
         vector<vector<int>> ans;
 
