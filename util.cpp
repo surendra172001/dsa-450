@@ -21,6 +21,11 @@ void reverseVec(vector<int> &vec)
     }
 }
 
+void append(vector<int> &a, vector<int> &b)
+{
+    a.insert(a.end(), b.begin(), b.end());
+}
+
 int main()
 {
     return 0;
