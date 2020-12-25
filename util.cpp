@@ -57,6 +57,16 @@ void printArr(int arr[], int n)
     cout << endl;
 }
 
+int mainMultiCase()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+    }
+    return 0;
+}
+
 int main()
 {
     return 0;
