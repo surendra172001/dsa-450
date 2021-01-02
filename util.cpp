@@ -10,6 +10,19 @@ void printVector(vector<int> &A)
     cout << endl;
 }
 
+void printMatrix(vector<vector<int>> &mat, int r, int c)
+{
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            cout << mat[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
 void reverseVec(vector<int> &vec)
 {
 
@@ -67,7 +80,25 @@ int mainMultiCase()
     return 0;
 }
 
+void matrixInput()
+{
+    int r, c;
+
+    vector<vector<int>> mat(r, vector<int>(c));
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            cin >> mat[i][j];
+        }
+    }
+}
+
 int main()
 {
+    int x;
+    // get type of a variable
+    typeid(x).name();
     return 0;
 }
