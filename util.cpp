@@ -84,6 +84,8 @@ void matrixInput()
 {
     int r, c;
 
+    cin >> r >> c;
+
     vector<vector<int>> mat(r, vector<int>(c));
 
     for (int i = 0; i < r; i++)
