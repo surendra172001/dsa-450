@@ -60,6 +60,19 @@ void removeDuplicates(int arr[], int &N)
     N = j + 1;
 }
 
+vector<int> intToVector(int num)
+{
+    vector<int> ans;
+    while (num > 0)
+    {
+        ans.push_back(num % 10);
+        num /= 10;
+    }
+
+    reverseVec(ans);
+    return ans;
+}
+
 void printArr(int arr[], int n)
 {
 
