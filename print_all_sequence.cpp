@@ -8,56 +8,26 @@ using namespace std;
 class Solution
 {
 public:
-    vector<string> printAllSequenceUtil(string &str, int curr, int n)
+    void printAllSequenceUtil(vector<string> &ans, string &originalStr, string str, int curr, int n)
     {
-
-        if (curr == n - 1)
+        if (curr == n)
         {
-            return vector<string>(1, string(1, str[curr]));
+            ans.push_back(str);
+            return;
         }
-
-        vector<string> smallAns = printAllSequenceUtil(str, curr + 1, n);
-
-        // cout << curr << endl;
-        // for (int i = 0; i < smallAns.size(); i++)
-        // {
-        //     cout << smallAns[i] << endl;
-        // }
-
-        int m = smallAns[0].length();
-
-        vector<string> ans;
-
-        for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < smallAns.size(); j++)
-            {
-
-                string s = smallAns[j];
-
-                s.insert(i, string(1, str[curr]));
-
-                ans.push_back(s);
-            }
-        }
-
-        for (int j = 0; j < smallAns.size(); j++)
-        {
-            string s = smallAns[j];
-
-            s.append(string(1, str[curr]));
-
-            ans.push_back(s);
-        }
-
-        return ans;
+        printAllSequenceUtil(ans, originalStr, str + string(1, originalStr[curr]), curr + 1, n);
+        printAllSequenceUtil(ans, originalStr, str, curr + 1, n);
     }
 
     vector<string> printAllSequence(string &str)
     {
         int n = str.length();
 
-        return printAllSequenceUtil(str, 0, n);
+        vector<string> ans;
+
+        printAllSequenceUtil(ans, str, "", 0, n);
+
+        return ans;
     }
 };
 
