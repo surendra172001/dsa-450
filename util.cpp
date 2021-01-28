@@ -93,6 +93,18 @@ int mainMultiCase()
     return 0;
 }
 
+string listToString(list<char> &charList)
+{
+    string ans;
+
+    for (char ch : charList)
+    {
+        ans.push_back(ch);
+    }
+
+    return ans;
+}
+
 void matrixInput()
 {
     int r, c;
