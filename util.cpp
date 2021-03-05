@@ -139,6 +139,45 @@ double ternary_search(double l, double r)
     return f(l); //return the maximum of f(x) in [l, r]
 }
 
+// Linked List
+void printLL(Node *head)
+{
+    Node *curr = head;
+    while (curr != NULL)
+    {
+        cout << curr->data << " ";
+    }
+    cout << endl;
+}
+
+void deleteLL(Node *head)
+{
+    Node *curr = head;
+    while (curr != NULL)
+    {
+        Node *temp = curr->next;
+        delete curr;
+        curr = temp;
+    }
+}
+
+Node *inputLL(Node *head, int n)
+{
+    Node *curr = head;
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> (curr->data);
+        if (i != n - 1)
+        {
+            curr->next = new Node();
+        }
+        curr = curr->next;
+    }
+
+    return head;
+}
+
 int main()
 {
     int x;
