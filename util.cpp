@@ -178,6 +178,12 @@ Node *inputLL(Node *head, int n)
     return head;
 }
 
+void clearBuffer()
+{
+    while ((getchar()) != '\n')
+        ;
+}
+
 int main()
 {
     int x;

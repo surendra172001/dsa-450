@@ -54,7 +54,23 @@ Node *inputLL(Node *head, int n)
 class Solution
 {
 public:
-    struct Node *reverseList(struct Node *head)
+    Node *reverseListUtil(Node *prev, Node *curr)
+    {
+        if (curr == NULL)
+        {
+            return prev;
+        }
+        Node *next = curr->next;
+        curr->next = prev;
+        return reverseListUtil(curr, next);
+    }
+
+    Node *reverseListRec(Node *head)
+    {
+        return reverseListUtil(NULL, head);
+    }
+
+    struct Node *reverseListItr(struct Node *head)
     {
         Node *prev = NULL,
              *curr = head,
@@ -91,7 +107,7 @@ int main()
         head = inputLL(head, n);
 
         Solution ob;
-        Node *revLLHead = ob.reverseList(head);
+        Node *revLLHead = ob.reverseListItr(head);
 
         printLL(revLLHead);
 
