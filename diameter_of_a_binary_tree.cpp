@@ -137,6 +137,8 @@ int main()
         int ans = ob.diameter(root);
 
         cout << ans << endl;
+
+        deleteTree(root);
     }
 
     return 0;

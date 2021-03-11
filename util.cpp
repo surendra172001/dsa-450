@@ -1,5 +1,25 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
+template <typename T>
+class MyCmp
+{
+public:
+    bool operator()(T &a, T &b)
+    {
+        return a < b;
+        // or a > g
+        // or some custom condition evaluation
+    }
+};
+
+void priority_queue_initialization()
+{
+    // max priority queue
+    priority_queue<int> max_pq;
+    priority_queue<int, vector<int>, greater<int>> min_pq;
+}
 
 void printVector(vector<int> &A)
 {
